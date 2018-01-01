@@ -20,6 +20,9 @@
         <activity
             android:name=".positioning.PositioningViewActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".positioning.PositioningRelativeActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
