@@ -15,7 +15,19 @@ A ConstraintLayout is a ViewGroup which allows you to position and size widgets 
 ## 3. ConstraintLayout的属性
 先简单了解一下我们使用这个布局要用到的属性，如下表所示：
 
-第一表头 | 第二表头
------------- | -------------
-第一单元格内容 | 第二单元格内容
-第一列内容 | 第二列内容
+属性
+------------
+layout_constraintLeft_toLeftOf
+layout_constraintLeft_toRightOf
+layout_constraintRight_toLeftOf
+layout_constraintRight_toRightOf
+layout_constraintTop_toTopOf
+layout_constraintTop_toBottomOf
+layout_constraintBottom_toTopOf
+layout_constraintBottom_toBottomOf
+layout_constraintBaseline_toBaselineOf
+layout_constraintBaseline_creator
+layout_constraintStart_toEndOf
+layout_constraintStart_toStartOf
+layout_constraintEnd_toStartOf
+layout_constraintEnd_toEndOf
