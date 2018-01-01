@@ -84,3 +84,4 @@ app:layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top sid
 </android.support.constraint.ConstraintLayout>
 ```
 通过以上的这段布局，即可完成下图所示的基础方位布局的搭建。仔细观察，你可能会发现这不就是RelativeLayout里面的alignParentXXX吗？Definitely Yes。
+![固定方位布局](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/positioning_views.png)
