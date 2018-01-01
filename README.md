@@ -13,7 +13,7 @@ A ConstraintLayout is a ViewGroup which allows you to position and size widgets 
 ```
 描述很直接，说的就是ConstraintLayout其实就是一个ViewGroup，可以灵活的摆放控件的位置和调整控件的大小。那么接下来就研究一下描述中提到的这个"灵活性"。
 ## 3. ConstraintLayout的属性
-先简单了解一下我们使用这个布局要用到的属性，如下表所示：
+先简单了解一下我们使用这个布局要用到的一些基本方位属性，如下表所示：
 
 属性 | 描述
 ------------ | -------------
@@ -25,9 +25,8 @@ layout_constraintTop_toTopOf | 把A的top side放在B的top side（顶部对齐�
 layout_constraintTop_toBottomOf | 把A的top side放在B的bottom side（顶部相对底部对齐）
 layout_constraintBottom_toTopOf | 把A的bottom side放在B的top side（底部相对顶部对齐）
 layout_constraintBottom_toBottomOf | 把A的bottom side放在B的bottom side（底部对齐）
-layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top side（基准线对齐）
-layout_constraintBaseline_creator |
 layout_constraintStart_toEndOf | 把A的start position放在B的end position（起始位置相对结束位置对齐）
 layout_constraintStart_toStartOf | 把A的start position放在B的start position（起始位置对齐）
 layout_constraintEnd_toStartOf | 把A的end position放在B的start position（结束位置相对起始位置对齐）
 layout_constraintEnd_toEndOf | 把A的end position放在B的end position（结束位置对齐）
+layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top side（基准线对齐）
