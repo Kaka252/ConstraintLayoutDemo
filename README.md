@@ -28,6 +28,6 @@ layout_constraintBottom_toBottomOf | 把A的bottom side放在B的bottom side（�
 layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top side（基准线对齐）
 layout_constraintBaseline_creator |
 layout_constraintStart_toEndOf | 把A的start position放在B的end position（起始位置相对结束位置对齐）
-layout_constraintStart_toStartOf | 把A的start position放在B的end position（起始位置对齐）
+layout_constraintStart_toStartOf | 把A的start position放在B的start position（起始位置对齐）
 layout_constraintEnd_toStartOf | 把A的end position放在B的start position（结束位置相对起始位置对齐）
 layout_constraintEnd_toEndOf | 把A的end position放在B的end position（结束位置对齐）
