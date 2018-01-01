@@ -128,4 +128,8 @@ app:layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top sid
 </android.support.constraint.ConstraintLayout>
 ```
 布局的代码页很简单，就是把A控件作为参照位置，然后再根据A的位置来定位其他控件的相对位置。
+![相对位置布局](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/device-2018-01-01-164744.png)
 
+那么通过这两个例子，你会发现，RelativeLayout的相对位置的操作，ConstraintLayout也能轻易实现。
+
+#ConstraintLayout的权重布局
