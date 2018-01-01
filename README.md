@@ -6,3 +6,10 @@ ConstraintLayout直到现在依然在开发和维护过程中，并且现在已�
 ```
 implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 ```
+## 2. ConstraintLayout是个啥
+那么，在使用之前，还是有必要先简单认识一下我们将要使用的这个布局到底是个啥。官方文档上是这么说的：
+```
+A ConstraintLayout is a ViewGroup which allows you to position and size widgets in a flexible way.
+```
+描述很直接，说的就是ConstraintLayout其实就是一个ViewGroup，可以灵活的摆放控件的位置和调整控件的大小。那么接下来就研究一下描述中提到的这个"灵活性"。
+## 3. 
