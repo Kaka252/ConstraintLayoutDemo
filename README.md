@@ -72,6 +72,15 @@ app:layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top sid
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
+    <Button
+        android:id="@+id/btn_item_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="中间"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>
 ```
 通过以上的这段布局，即可完成下图所示的基础方位布局的搭建。仔细观察，你可能会发现这不就是RelativeLayout里面的alignParentXXX吗？Definitely Yes。
