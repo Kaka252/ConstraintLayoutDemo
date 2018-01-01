@@ -12,4 +12,10 @@ implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 A ConstraintLayout is a ViewGroup which allows you to position and size widgets in a flexible way.
 ```
 描述很直接，说的就是ConstraintLayout其实就是一个ViewGroup，可以灵活的摆放控件的位置和调整控件的大小。那么接下来就研究一下描述中提到的这个"灵活性"。
-## 3. 
+## 3. ConstraintLayout的属性
+先简单了解一下我们使用这个布局要用到的属性，如下表所示：
+
+第一表头 | 第二表头
+------------ | -------------
+第一单元格内容 | 第二单元格内容
+第一列内容 | 第二列内容
