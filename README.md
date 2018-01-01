@@ -12,7 +12,7 @@ implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 A ConstraintLayout is a ViewGroup which allows you to position and size widgets in a flexible way.
 ```
 描述很直接，说的就是ConstraintLayout其实就是一个ViewGroup，可以灵活的摆放控件的位置和调整控件的大小。那么接下来就研究一下描述中提到的这个"灵活性"。
-## 3. ConstraintLayout的属性
+## 3. ConstraintLayout的方位属性
 先简单了解一下我们使用这个布局要用到的一些基本方位属性，如下表所示：
 
 属性 | 描述
@@ -30,3 +30,5 @@ layout_constraintStart_toStartOf | 把A的start position放在B的start position
 layout_constraintEnd_toStartOf | 把A的end position放在B的start position（结束位置相对起始位置对齐）
 layout_constraintEnd_toEndOf | 把A的end position放在B的end position（结束位置对齐）
 layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top side（基准线对齐）
+
+一堆属性看下来，想必你也晕了吧，看个例子就一目了然了：
