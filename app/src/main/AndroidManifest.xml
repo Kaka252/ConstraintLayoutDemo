@@ -18,7 +18,7 @@
         </activity>
 
         <activity
-            android:name=".PositioningViewActivity"
+            android:name=".positioning.PositioningViewActivity"
             android:screenOrientation="portrait" />
     </application>
 
