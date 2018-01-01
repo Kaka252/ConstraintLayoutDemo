@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.btn_view_positioning).setOnClickListener(this);
+        findViewById(R.id.btn_relative_positioning).setOnClickListener(this);
     }
 
     @Override
