@@ -17,18 +17,61 @@ A ConstraintLayout is a ViewGroup which allows you to position and size widgets 
 
 属性 | 描述
 ------------ | -------------
-layout_constraintLeft_toLeftOf | 把A的left side放在B的left side（左边对齐）
-layout_constraintLeft_toRightOf | 把A的left side放在B的right side（左边相对右边对齐）
-layout_constraintRight_toLeftOf | 把A的right side放在B的left side（右边相对左边对齐）
-layout_constraintRight_toRightOf | 把A的right side放在B的right side（右边对齐）
-layout_constraintTop_toTopOf | 把A的top side放在B的top side（顶部对齐）
-layout_constraintTop_toBottomOf | 把A的top side放在B的bottom side（顶部相对底部对齐）
-layout_constraintBottom_toTopOf | 把A的bottom side放在B的top side（底部相对顶部对齐）
-layout_constraintBottom_toBottomOf | 把A的bottom side放在B的bottom side（底部对齐）
-layout_constraintStart_toEndOf | 把A的start position放在B的end position（起始位置相对结束位置对齐）
-layout_constraintStart_toStartOf | 把A的start position放在B的start position（起始位置对齐）
-layout_constraintEnd_toStartOf | 把A的end position放在B的start position（结束位置相对起始位置对齐）
-layout_constraintEnd_toEndOf | 把A的end position放在B的end position（结束位置对齐）
-layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top side（基准线对齐）
+app:layout_constraintLeft_toLeftOf | 把A的left side放在B的left side（左边对齐）
+app:layout_constraintLeft_toRightOf | 把A的left side放在B的right side（左边相对右边对齐）
+app:layout_constraintRight_toLeftOf | 把A的right side放在B的left side（右边相对左边对齐）
+app:layout_constraintRight_toRightOf | 把A的right side放在B的right side（右边对齐）
+app:layout_constraintTop_toTopOf | 把A的top side放在B的top side（顶部对齐）
+app:layout_constraintTop_toBottomOf | 把A的top side放在B的bottom side（顶部相对底部对齐）
+app:layout_constraintBottom_toTopOf | 把A的bottom side放在B的top side（底部相对顶部对齐）
+app:layout_constraintBottom_toBottomOf | 把A的bottom side放在B的bottom side（底部对齐）
+app:layout_constraintStart_toEndOf | 把A的start position放在B的end position（起始位置相对结束位置对齐）
+app:layout_constraintStart_toStartOf | 把A的start position放在B的start position（起始位置对齐）
+app:layout_constraintEnd_toStartOf | 把A的end position放在B的start position（结束位置相对起始位置对齐）
+app:layout_constraintEnd_toEndOf | 把A的end position放在B的end position（结束位置对齐）
+app:layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top side（基准线对齐）
+
+注意：属性的命名控件是app。
 
 一堆属性看下来，想必你也晕了吧，看个例子就一目了然了：
+```
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_item_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="左上"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_item_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="右上"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_item_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="左下"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/btn_item_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="右下"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+```
+通过以上的这段布局，即可完成下图所示的基础方位布局的搭建。仔细观察，你可能会发现这不就是RelativeLayout里面的alignParentXXX吗？Definitely Yes。
