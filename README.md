@@ -85,3 +85,47 @@ app:layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top sid
 ```
 通过以上的这段布局，即可完成下图所示的基础方位布局的搭建。仔细观察，你可能会发现这不就是RelativeLayout里面的alignParentXXX吗？Definitely Yes。
 ![固定方位布局](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/positioning_views.png)
+
+如果想根据控件和控件之间的相对位置进行摆放的话，那么可以参考如下的使用方式进行处理：
+```
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/btn_text_A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="text A"/>
+
+    <Button
+        android:id="@+id/btn_text_B"
+        app:layout_constraintLeft_toRightOf="@+id/btn_text_A"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_text_A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text B"/>
+
+    <Button
+        android:id="@+id/btn_text_C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/btn_text_A"
+        app:layout_constraintTop_toBottomOf="@+id/btn_text_A"
+        android:text="text C"/>
+
+    <Button
+        android:id="@+id/btn_text_D"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btn_text_C"
+        app:layout_constraintTop_toBottomOf="@+id/btn_text_A"
+        android:text="text D"/>
+
+</android.support.constraint.ConstraintLayout>
+```
+布局的代码页很简单，就是把A控件作为参照位置，然后再根据A的位置来定位其他控件的相对位置。
+
