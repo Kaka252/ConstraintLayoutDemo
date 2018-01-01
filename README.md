@@ -31,7 +31,7 @@ app:layout_constraintEnd_toStartOf | 把A的end position放在B的start position
 app:layout_constraintEnd_toEndOf | 把A的end position放在B的end position（结束位置对齐）
 app:layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top side（基准线对齐）
 
-注意：属性的命名控件是app。
+注意：属性的命名空间是app。
 
 一堆属性看下来，想必你也晕了吧，看个例子就一目了然了：
 ```
