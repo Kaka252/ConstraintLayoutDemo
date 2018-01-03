@@ -1,12 +1,17 @@
 package com.zhouyou.cllayout.practice;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ListView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.zhouyou.cllayout.R;
 import com.zhouyou.cllayout.practice.adapter.ItemListAdapter;
+import com.zhouyou.cllayout.utils.Avatars;
 
 /**
  * Author: ZhouYou
@@ -19,6 +24,12 @@ public class Practice1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_constrainlayout_practice_1);
         ListView listView = findViewById(R.id.list_view);
+
+        View banner = LayoutInflater.from(this).inflate(R.layout.view_banner, null);
+        SimpleDraweeView ivBanner = banner.findViewById(R.id.iv_banner);
+        Uri uri = Uri.parse(Avatars.BANNER);
+        ivBanner.setImageURI(uri);
+        listView.addHeaderView(banner);
 
         ItemListAdapter adapter = new ItemListAdapter(this);
         listView.setAdapter(adapter);

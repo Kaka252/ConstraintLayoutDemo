@@ -14,4 +14,6 @@ public class Avatars {
             "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1514974196690&di=095f7afe549ab3d13eda872f184add74&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1889530518%2C1090420221%26fm%3D214%26gp%3D0.jpg",
             "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1514973958408&di=a9718fd7fe4a0cb9e41ca43f75c06fa3&imgtype=0&src=http%3A%2F%2Fimg.bitscn.com%2Fupimg%2Fallimg%2Fc160120%2F1453262P045310-29236.jpg"
     };
+
+    public static final String BANNER = "http://pic.nipic.com/2008-01-16/200811612319773_2.jpg";
 }
