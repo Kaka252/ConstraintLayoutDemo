@@ -132,5 +132,5 @@ app:layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top sid
 
 那么通过这两个例子，你会发现，RelativeLayout的相对位置的操作，ConstraintLayout也能轻易实现。
 
-# ConstraintLayout的权重布局
-权重这个概念是来自于之前的布局里的Gravity属性，不过在ConstraintLayout里这个属性不再被称作Gravity，而是被叫做了Biasing。接下来，我们就一起研究一下这个biasing是个啥。
+# 偏斜(Bias)
+权重的概念是来自于之前的布局里的Gravity属性，不过在ConstraintLayout里这个属性不再被称作Gravity，而是被叫做了Bias。接下来，我们就一起研究一下这个Bias是个啥。
