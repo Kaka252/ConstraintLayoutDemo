@@ -161,3 +161,27 @@ app:layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top sid
 app:layout_constraintHorizontal_bias | 水平方向偏移系数
 app:layout_constraintVertical_bias | 垂直方向偏移系数
 
+当然我们不只可以针对水平方向对控件进行偏移，同样也可以在垂直方向上进行偏移。
+
+# GONE不是真的GONE
+我们在使用RelativeLayout铺页面的时候，经常会碰到这么一种逻辑，当某个数据为空的时候，该数据所绑定的控件则GONE掉。那么这样会出现这样的问题，假如有三个控件A，B，C垂直排列，B在A的下方，C在B的下方，当B隐藏(GONE)掉了之后，由于C对于A并没有依赖关系，所以会导致页面错乱。这个问题ConstraintLayout给出了很好的解决方案。
+当在ConstraintLayout中，若一个控件隐藏(GONE)之后，他会变成一个点，因此对于把该控件作为参考控件的其他控件依然具有约束作用。官方的文档也给出了答案。
+
+```
+For the layout pass, their dimension will be considered as if zero (basically, they will be resolved to a point).
+
+If they have constraints to other widgets they will still be respected, but any margins will be as if equals to zero.
+```
+当这个控件隐藏之后，我们还可以针对这个隐藏的控件设置边距的属性。
+
+属性 | 描述
+------------ | -------------
+app:layout_goneMarginLeft | 隐藏控件左边距
+app:layout_goneMarginRight | 隐藏控件右边距
+app:layout_goneMarginTop | 隐藏控件顶部边距
+app:layout_goneMarginBottom | 隐藏控件底部边距
+app:layout_goneMarginStart | 隐藏控件起始边距
+app:layout_goneMarginEnd | 隐藏控件结束边距
+
+
+
