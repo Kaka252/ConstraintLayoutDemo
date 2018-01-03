@@ -133,4 +133,31 @@ app:layout_constraintBaseline_toBaselineOf | 把A的bottom side放在B的top sid
 那么通过这两个例子，你会发现，RelativeLayout的相对位置的操作，ConstraintLayout也能轻易实现。
 
 # 偏斜(Bias)
-权重的概念是来自于之前的布局里的Gravity属性，不过在ConstraintLayout里这个属性不再被称作Gravity，而是被叫做了Bias。接下来，我们就一起研究一下这个Bias是个啥。
+在使用LinearLayout的时候，我们通常会使用Gravity来将水平或者垂直排列的控件按照权重的分配进行排列。而在ConstraintLayout中，它提供了bias属性来对控件进行权重的分配。
+```
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+```
+以上代码我们可以简单的看出，当一个控件被约束在屏幕的左侧，又被约束在屏幕的右侧，结果这个控件显示在了中间的位置，为什么？
+(1) 当使用了bias属性并设置了0.25的偏移量之后，我们发现控件在水平方向上向左偏移了屏幕宽度的1/4距离
+(2) 如果我们把偏移值改成0.75，我们可以看到控件在水平方向上向右偏移了1/4的距离。
+
+那么我们可以看出一点就是，当一个控件在被约束的前提下，它的默认偏移量是0.5。
+
+属性 | 描述
+------------ | -------------
+app:layout_constraintHorizontal_bias | 水平方向偏移系数
+app:layout_constraintVertical_bias | 垂直方向偏移系数
+
