@@ -26,18 +26,22 @@ public class BalanceTextLayout extends ConstraintLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
+    public void calculate() {
+        int w = View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.AT_MOST);
+        int h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+        this.measure(w, h);
+        int height = getMeasuredHeight();
+        int width = getMeasuredWidth();
+
 
         int wholeTextLength = 0;
         int viewCount = getChildCount();
-        for (int i = 0; i< viewCount; i++) {
+        for (int i = 0; i < viewCount; i++) {
             View view = getChildAt(i);
             if (view instanceof TextView) {
                 TextView textView = (TextView) view;
                 TextPaint textPaint = textView.getPaint();
-                float textLength = textPaint.measureText(textView.getText().toString());
+                float textLength = textPaint.measureText(textView.getText().toString().trim());
                 wholeTextLength += textLength;
                 Log.d("BalanceTextLayout", "child_" + i + " = " + textLength);
             }
@@ -47,24 +51,17 @@ public class BalanceTextLayout extends ConstraintLayout {
         if (view == null) {
             return;
         }
-
-        int width = (right - left);
+        ConstraintLayout.LayoutParams params = (LayoutParams) view.getLayoutParams();
         if (width >= wholeTextLength) {
-            ConstraintLayout.LayoutParams params = (LayoutParams) view.getLayoutParams();
-            params.width = 0;
-            params.height = LayoutParams.MATCH_CONSTRAINT_WRAP;
+            params.width = LayoutParams.MATCH_CONSTRAINT_WRAP;
+            params.horizontalBias = 0f;
             params.horizontalChainStyle = LayoutParams.CHAIN_PACKED;
-            params.leftToLeft = LayoutParams.PARENT_ID;
-            params.rightToRight = LayoutParams.PARENT_ID;
-            view.setLayoutParams(params);
         } else {
-            ConstraintLayout.LayoutParams params = (LayoutParams) view.getLayoutParams();
             params.width = 0;
-            params.height = LayoutParams.MATCH_CONSTRAINT_WRAP;
-            params.leftToLeft = LayoutParams.PARENT_ID;
-            params.rightToRight = LayoutParams.PARENT_ID;
+            params.horizontalBias = 0f;
             params.horizontalChainStyle = LayoutParams.CHAIN_SPREAD;
-            view.setLayoutParams(params);
         }
+        view.setLayoutParams(params);
+        postInvalidate();
     }
 }

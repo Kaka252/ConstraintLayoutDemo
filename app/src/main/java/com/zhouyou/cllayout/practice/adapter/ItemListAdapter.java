@@ -5,11 +5,13 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.BaseAdapter;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.zhouyou.cllayout.R;
 import com.zhouyou.cllayout.utils.Avatars;
+import com.zhouyou.cllayout.view.BalanceTextLayout;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,7 +49,7 @@ public class ItemListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
+        final ViewHolder holder;
         if (convertView == null) {
             convertView = LayoutInflater.from(activity).inflate(R.layout.item_practise_layout_1, null);
             holder = new ViewHolder();
@@ -59,14 +61,18 @@ public class ItemListAdapter extends BaseAdapter {
         String url = getItem(position);
         Uri uri = Uri.parse(url);
         holder.ivAvatar.setImageURI(uri);
+
+        holder.balanceTextLayout.calculate();
         return convertView;
     }
 
     static class ViewHolder {
         SimpleDraweeView ivAvatar;
+        BalanceTextLayout balanceTextLayout;
 
         void init(View itemView) {
             ivAvatar = itemView.findViewById(R.id.iv_avatar);
+            balanceTextLayout = itemView.findViewById(R.id.balance_layout);
         }
     }
 }
