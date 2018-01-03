@@ -8,6 +8,7 @@ import android.view.View;
 import com.zhouyou.cllayout.bias.BiasActivity;
 import com.zhouyou.cllayout.positioning.PositioningRelativeActivity;
 import com.zhouyou.cllayout.positioning.PositioningViewActivity;
+import com.zhouyou.cllayout.practice.Practice1Activity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_view_positioning).setOnClickListener(this);
         findViewById(R.id.btn_relative_positioning).setOnClickListener(this);
         findViewById(R.id.btn_bias).setOnClickListener(this);
+        findViewById(R.id.btn_practise_1).setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_bias:
                 intent = new Intent(this, BiasActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_practise_1:
+                intent = new Intent(this, Practice1Activity.class);
                 startActivity(intent);
                 break;
             default:
