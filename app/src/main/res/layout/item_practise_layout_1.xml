@@ -30,17 +30,20 @@
 
         <TextView
             android:id="@+id/tv_user_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:text="郭峰"
             android:textColor="@color/color_484848"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
             android:id="@+id/tv_info"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
@@ -49,7 +52,8 @@
             android:textColor="@color/color_aaaaaa"
             android:textSize="14sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/tv_user_name"
-            app:layout_constraintLeft_toRightOf="@+id/tv_user_name" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
     </com.zhouyou.cllayout.view.BalanceTextLayout>
 
     <TextView
