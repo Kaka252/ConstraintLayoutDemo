@@ -28,7 +28,8 @@
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintLeft_toRightOf="@+id/iv_avatar" />
+        app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
+        app:layout_goneMarginLeft="65dp" />
 
     <TextView
         android:id="@+id/tv_info"
@@ -69,7 +70,8 @@
         android:text="追求完美，思维缜密，喜欢与人交流，慢性子，稳扎稳打！ "
         android:textColor="@color/color_aaaaaa"
         android:textSize="14dp"
-        app:layout_constraintTop_toBottomOf="@+id/iv_avatar" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+        app:layout_goneMarginTop="60dp" />
 
     <ImageView
         android:id="@+id/iv_close"
