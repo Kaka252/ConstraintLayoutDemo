@@ -18,35 +18,39 @@
         fresco:fadeDuration="250"
         fresco:roundAsCircle="true" />
 
-    <TextView
-        android:id="@+id/tv_user_name"
+    <com.zhouyou.cllayout.view.BalanceTextLayout
+        android:id="@+id/balance_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
-        android:singleLine="true"
-        android:text="郭峰"
-        android:textColor="@color/color_484848"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
-        app:layout_goneMarginLeft="65dp" />
+        app:layout_constraintRight_toLeftOf="@+id/iv_close"
+        app:layout_goneMarginLeft="65dp">
 
-    <TextView
-        android:id="@+id/tv_info"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:gravity="left"
-        android:singleLine="true"
-        android:text="3年 本科 10k-11k"
-        android:textColor="@color/color_aaaaaa"
-        android:textSize="14sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_user_name"
-        app:layout_constraintLeft_toRightOf="@+id/tv_user_name"
-        app:layout_constraintRight_toLeftOf="@+id/iv_close" />
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="郭峰"
+            android:textColor="@color/color_484848"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:singleLine="true"
+            android:text="3年 本科 10k-11k"
+            android:textColor="@color/color_aaaaaa"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_user_name"
+            app:layout_constraintLeft_toRightOf="@+id/tv_user_name" />
+    </com.zhouyou.cllayout.view.BalanceTextLayout>
 
     <TextView
         android:id="@+id/tv_info_2"
@@ -58,10 +62,10 @@
         android:text="期望职位 java"
         android:textColor="@color/color_484848"
         android:textSize="15sp"
-        app:layout_constraintLeft_toLeftOf="@+id/tv_user_name"
+        app:layout_constraintLeft_toLeftOf="@+id/balance_layout"
         app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
         app:layout_constraintRight_toLeftOf="@+id/iv_close"
-        app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
+        app:layout_constraintTop_toBottomOf="@+id/balance_layout" />
 
     <TextView
         android:id="@+id/tv_desc"
