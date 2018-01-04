@@ -46,7 +46,7 @@
             android:id="@+id/tv_chain_spread_3"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/black"
             android:gravity="center"
             android:text="text 3"
             android:textColor="@android:color/white"
@@ -65,8 +65,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cl_chain_spread_inside"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_chain_spread_inside_1"
@@ -95,7 +94,7 @@
             android:id="@+id/tv_chain_spread_inside_3"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/black"
             android:gravity="center"
             android:text="text 3"
             android:textColor="@android:color/white"
@@ -114,8 +113,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cl_chain_pack"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_chain_pack_1"
@@ -144,7 +142,7 @@
             android:id="@+id/tv_chain_pack_3"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/black"
             android:gravity="center"
             android:text="text 3"
             android:textColor="@android:color/white"
@@ -163,8 +161,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cl_chain_pack_with_bias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_chain_pack_with_bias_1"
@@ -194,7 +191,7 @@
             android:id="@+id/tv_chain_pack_with_bias_3"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/black"
             android:gravity="center"
             android:text="text 3"
             android:textColor="@android:color/white"
