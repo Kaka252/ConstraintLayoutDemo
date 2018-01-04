@@ -33,12 +33,21 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_relative_positioning" />
 
     <Button
+        android:id="@+id/btn_chain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="chain属性示例"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bias" />
+
+    <Button
         android:id="@+id/btn_practise_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="ConstraintLayout练习1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_bias" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_chain" />
 
 </android.support.constraint.ConstraintLayout>

@@ -3,7 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_e9efef"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:text="Chain Spread" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cl_chain_spread"
@@ -18,8 +26,8 @@
             android:gravity="center_vertical|left"
             android:singleLine="true"
             android:text="text 1"
-            app:layout_constraintHorizontal_chainStyle="spread"
             android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_2" />
 
@@ -47,11 +55,18 @@
 
     </android.support.constraint.ConstraintLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:text="Chain Spread Inside" />
+
     <android.support.constraint.ConstraintLayout
-        android:layout_marginTop="10dp"
         android:id="@+id/cl_chain_spread_inside"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/tv_chain_spread_inside_1"
@@ -60,8 +75,8 @@
             android:background="@color/colorAccent"
             android:gravity="center"
             android:text="text 1"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
             android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_inside_2" />
 
@@ -89,11 +104,18 @@
 
     </android.support.constraint.ConstraintLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:text="Chain Pack" />
+
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cl_chain_pack"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/tv_chain_pack_1"
@@ -102,8 +124,8 @@
             android:background="@color/colorAccent"
             android:gravity="center"
             android:text="text 1"
-            app:layout_constraintHorizontal_chainStyle="packed"
             android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/tv_chain_pack_2" />
 
@@ -127,6 +149,56 @@
             android:text="text 3"
             android:textColor="@android:color/white"
             app:layout_constraintLeft_toRightOf="@+id/tv_chain_pack_2"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:text="Chain Pack With Bias" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_chain_pack_with_bias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_chain_pack_with_bias_1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            app:layout_constraintHorizontal_bias="0"
+            android:text="text 1"
+            android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_chain_pack_with_bias_2" />
+
+        <TextView
+            android:id="@+id/tv_chain_pack_with_bias_2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="text 2"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toRightOf="@+id/tv_chain_pack_with_bias_1"
+            app:layout_constraintRight_toLeftOf="@+id/tv_chain_pack_with_bias_3" />
+
+        <TextView
+            android:id="@+id/tv_chain_pack_with_bias_3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="text 3"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toRightOf="@+id/tv_chain_pack_with_bias_2"
             app:layout_constraintRight_toRightOf="parent" />
 
     </android.support.constraint.ConstraintLayout>

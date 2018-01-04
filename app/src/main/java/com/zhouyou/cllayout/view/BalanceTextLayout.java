@@ -62,6 +62,5 @@ public class BalanceTextLayout extends ConstraintLayout {
             params.horizontalChainStyle = LayoutParams.CHAIN_SPREAD;
         }
         view.setLayoutParams(params);
-        postInvalidate();
     }
 }
