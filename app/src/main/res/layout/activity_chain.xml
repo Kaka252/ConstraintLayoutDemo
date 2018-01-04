@@ -168,14 +168,15 @@
 
         <TextView
             android:id="@+id/tv_chain_pack_with_bias_1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:background="@color/colorAccent"
             android:gravity="center"
-            android:text="text 1"
+            android:singleLine="true"
+            android:text="text 1sdfsdfsdfssdfsf"
             android:textColor="@android:color/white"
             app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/tv_chain_pack_with_bias_2" />
 
@@ -185,7 +186,9 @@
             android:layout_height="50dp"
             android:background="@color/colorPrimary"
             android:gravity="center"
-            android:text="text 2"
+            android:maxWidth="200dp"
+            android:singleLine="true"
+            android:text="text 2sfsdfsfssdsdfsdfsdfdfsdfsfdfdfs"
             android:textColor="@android:color/white"
             app:layout_constraintLeft_toRightOf="@+id/tv_chain_pack_with_bias_1"
             app:layout_constraintRight_toLeftOf="@+id/tv_chain_pack_with_bias_3" />
@@ -196,7 +199,9 @@
             android:layout_height="50dp"
             android:background="@android:color/black"
             android:gravity="center"
-            android:text="text 3"
+            android:maxWidth="100dp"
+            android:singleLine="true"
+            android:text="text 3sdfsdfsfsdfsfsdf"
             android:textColor="@android:color/white"
             app:layout_constraintLeft_toRightOf="@+id/tv_chain_pack_with_bias_2"
             app:layout_constraintRight_toRightOf="parent" />

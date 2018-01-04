@@ -50,4 +50,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_chain" />
 
+    <Button
+        android:id="@+id/btn_constrain_set"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ConstraintSet示例"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_practise_1" />
+
 </android.support.constraint.ConstraintLayout>

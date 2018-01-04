@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_bias).setOnClickListener(this);
         findViewById(R.id.btn_chain).setOnClickListener(this);
         findViewById(R.id.btn_practise_1).setOnClickListener(this);
+        findViewById(R.id.btn_constrain_set).setOnClickListener(this);
     }
 
     @Override
@@ -45,6 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_practise_1:
+                intent = new Intent(this, Practice1Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_constrain_set:
                 intent = new Intent(this, Practice1Activity.class);
                 startActivity(intent);
                 break;
