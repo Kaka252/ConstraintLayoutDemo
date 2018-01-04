@@ -29,6 +29,10 @@ public class BalanceTextLayout extends ConstraintLayout {
     public void calculate(int width) {
         int wholeTextLength = 0;
         int viewCount = getChildCount();
+
+        int tailLength = 0;
+
+
         for (int i = 0; i < viewCount; i++) {
             View view = getChildAt(i);
             if (view instanceof TextView) {
@@ -37,6 +41,9 @@ public class BalanceTextLayout extends ConstraintLayout {
                 float textLength = textPaint.measureText(textView.getText().toString().trim());
                 wholeTextLength += textLength;
                 Log.d("BalanceTextLayout", "child_" + i + " = " + textLength);
+                if (i > 0) {
+                    tailLength += textLength;
+                }
             }
         }
 
@@ -49,7 +56,8 @@ public class BalanceTextLayout extends ConstraintLayout {
             params.width = LayoutParams.WRAP_CONTENT;
             params.horizontalChainStyle = LayoutParams.CHAIN_PACKED;
         } else {
-            params.width = 0;
+            int widgetLength = width - tailLength;
+            params.width = widgetLength > 0 ? widgetLength : 0;
             params.horizontalChainStyle = LayoutParams.CHAIN_SPREAD_INSIDE;
         }
         view.setLayoutParams(params);
