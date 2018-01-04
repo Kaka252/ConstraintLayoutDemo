@@ -26,14 +26,7 @@ public class BalanceTextLayout extends ConstraintLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    public void calculate() {
-        int w = View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.AT_MOST);
-        int h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-        this.measure(w, h);
-        int height = getMeasuredHeight();
-        int width = getMeasuredWidth();
-
-
+    public void calculate(int width) {
         int wholeTextLength = 0;
         int viewCount = getChildCount();
         for (int i = 0; i < viewCount; i++) {
@@ -53,13 +46,11 @@ public class BalanceTextLayout extends ConstraintLayout {
         }
         ConstraintLayout.LayoutParams params = (LayoutParams) view.getLayoutParams();
         if (width >= wholeTextLength) {
-            params.width = LayoutParams.MATCH_CONSTRAINT_WRAP;
-            params.horizontalBias = 0f;
+            params.width = LayoutParams.WRAP_CONTENT;
             params.horizontalChainStyle = LayoutParams.CHAIN_PACKED;
         } else {
             params.width = 0;
-            params.horizontalBias = 0f;
-            params.horizontalChainStyle = LayoutParams.CHAIN_SPREAD;
+            params.horizontalChainStyle = LayoutParams.CHAIN_SPREAD_INSIDE;
         }
         view.setLayoutParams(params);
     }

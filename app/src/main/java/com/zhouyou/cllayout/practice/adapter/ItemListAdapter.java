@@ -5,16 +5,16 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.zhouyou.cllayout.R;
-import com.zhouyou.cllayout.utils.Avatars;
+import com.zhouyou.cllayout.base.App;
+import com.zhouyou.cllayout.entity.User;
+import com.zhouyou.cllayout.utils.Scale;
 import com.zhouyou.cllayout.view.BalanceTextLayout;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -24,12 +24,11 @@ import java.util.List;
 public class ItemListAdapter extends BaseAdapter {
 
     private Activity activity;
-    private List<String> users;
+    private List<User> users;
 
-    public ItemListAdapter(Activity activity) {
+    public ItemListAdapter(Activity activity, List<User> users) {
         this.activity = activity;
-        users = new ArrayList<>();
-        users.addAll(Arrays.asList(Avatars.AVATARS));
+        this.users = users;
     }
 
     @Override
@@ -38,7 +37,7 @@ public class ItemListAdapter extends BaseAdapter {
     }
 
     @Override
-    public String getItem(int position) {
+    public User getItem(int position) {
         return users.get(position);
     }
 
@@ -58,19 +57,27 @@ public class ItemListAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        String url = getItem(position);
-        Uri uri = Uri.parse(url);
-        holder.ivAvatar.setImageURI(uri);
+        User user = getItem(position);
+        if (user != null) {
+            Uri uri = Uri.parse(user.avatar);
+            holder.ivAvatar.setImageURI(uri);
+            holder.tvUserName.setText(user.name);
 
-        holder.balanceTextLayout.calculate();
+            int screenWidth = App.get().getDisplayWidth();
+            int layoutWidth = screenWidth - Scale.dip2px(activity, 48) - Scale.dip2px(activity, 50 + 15) - Scale.dip2px(activity, 20);
+            holder.balanceTextLayout.calculate(layoutWidth);
+        }
+
         return convertView;
     }
 
     static class ViewHolder {
+        TextView tvUserName;
         SimpleDraweeView ivAvatar;
         BalanceTextLayout balanceTextLayout;
 
         void init(View itemView) {
+            tvUserName = itemView.findViewById(R.id.tv_user_name);
             ivAvatar = itemView.findViewById(R.id.iv_avatar);
             balanceTextLayout = itemView.findViewById(R.id.balance_layout);
         }

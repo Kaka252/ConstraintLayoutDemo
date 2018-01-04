@@ -10,8 +10,12 @@ import android.widget.ListView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.zhouyou.cllayout.R;
+import com.zhouyou.cllayout.entity.User;
 import com.zhouyou.cllayout.practice.adapter.ItemListAdapter;
 import com.zhouyou.cllayout.utils.Avatars;
+import com.zhouyou.cllayout.utils.UserManager;
+
+import java.util.List;
 
 /**
  * Author: ZhouYou
@@ -31,7 +35,8 @@ public class Practice1Activity extends AppCompatActivity {
         ivBanner.setImageURI(uri);
         listView.addHeaderView(banner);
 
-        ItemListAdapter adapter = new ItemListAdapter(this);
+        List<User> users = UserManager.getUsers();
+        ItemListAdapter adapter = new ItemListAdapter(this, users);
         listView.setAdapter(adapter);
     }
 }
