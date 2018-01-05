@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_chain" />
 
     <Button
-        android:id="@+id/btn_constrain_set"
+        android:id="@+id/btn_constraint_set"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="ConstraintSet示例"

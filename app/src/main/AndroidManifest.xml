@@ -22,20 +22,29 @@
 
         <activity
             android:name=".positioning.PositioningViewActivity"
+            android:label="@string/positioning_demo"
             android:screenOrientation="portrait" />
         <activity
             android:name=".positioning.PositioningRelativeActivity"
+            android:label="@string/positioning_demo"
             android:screenOrientation="portrait" />
         <activity
             android:name=".bias.BiasActivity"
+            android:label="@string/bias_demo"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".chain.ChainActivity"
+            android:label="@string/chain_demo"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".practice.Practice1Activity"
+            android:label="@string/constraint_layout_practise_1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".constraintset.ConstraintSetActivity"
+            android:label="@string/constraint_set_demo"
             android:screenOrientation="portrait" />
     </application>
 
