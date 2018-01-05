@@ -6,6 +6,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.transition.TransitionManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 
 import com.zhouyou.cllayout.R;
@@ -16,39 +17,60 @@ import com.zhouyou.cllayout.R;
 
 public class ConstraintSetActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ConstraintSet mSceneOne = new ConstraintSet();
-    ConstraintSet mSceneTwo = new ConstraintSet();
+    ConstraintSet sceneInit = new ConstraintSet();
+    ConstraintSet sceneChange = new ConstraintSet();
     ConstraintLayout mConstraintLayout;
+
+    private boolean isChanged;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_transition_1);
-        mSceneOne.clone(this, R.layout.view_transition_1);
-        mSceneTwo.clone(this, R.layout.view_transition_2);
-
+        setContentView(R.layout.activity_constraint_set);
         mConstraintLayout = findViewById(R.id.constraintLayout);
-        findViewById(R.id.button_next).setOnClickListener(this);
-        findViewById(R.id.button_cancel).setOnClickListener(this);
+        sceneInit.clone(mConstraintLayout);
+        sceneChange.clone(mConstraintLayout);
+
+
+        findViewById(R.id.iv_image).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_next:
-                transitionTo(mSceneTwo);
-                break;
-            case R.id.button_cancel:
-                transitionTo(mSceneOne);
+            case R.id.iv_image:
+                if (isChanged) {
+                    transitionTo(sceneInit);
+                } else {
+                    transitionTo(sceneChange);
+                }
+                isChanged = !isChanged;
                 break;
             default:
-                // Do nothing
                 break;
         }
     }
 
     private void transitionTo(ConstraintSet constraintSet) {
         TransitionManager.beginDelayedTransition(mConstraintLayout);
+        if (!isChanged) {
+            constraintSet.constrainWidth(R.id.iv_image, ConstraintSet.WRAP_CONTENT);
+            constraintSet.centerHorizontally(R.id.iv_image, R.id.constraintLayout);
+            constraintSet.centerVertically(R.id.iv_image, R.id.constraintLayout);
+            constraintSet.setVisibility(R.id.btn_click, ConstraintSet.VISIBLE);
+        }
         constraintSet.applyTo(mConstraintLayout);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (isChanged) {
+                transitionTo(sceneInit);
+                isChanged = !isChanged;
+                return false;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
