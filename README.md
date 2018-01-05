@@ -172,7 +172,7 @@ For the layout pass, their dimension will be considered as if zero (basically, t
 
 If they have constraints to other widgets they will still be respected, but any margins will be as if equals to zero.
 ```
-当这个控件隐藏之后，我们还可以针对这个隐藏的控件设置边距的属性。
+当这个控件隐藏之后，我们还可以参照这个隐藏的控件对其他控件设置边距的属性。
 
 属性 | 描述
 ------------ | -------------
@@ -182,6 +182,10 @@ app:layout_goneMarginTop | 隐藏控件顶部边距
 app:layout_goneMarginBottom | 隐藏控件底部边距
 app:layout_goneMarginStart | 隐藏控件起始边距
 app:layout_goneMarginEnd | 隐藏控件结束边距
+
+# 复杂布局的灵药：Chain属性
+
+# ConstraintSet简单使用说明
 
 
 

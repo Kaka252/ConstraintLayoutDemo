@@ -33,7 +33,7 @@ public class Practice1Activity extends AppCompatActivity {
         SimpleDraweeView ivBanner = banner.findViewById(R.id.iv_banner);
         Uri uri = Uri.parse(Avatars.BANNER);
         ivBanner.setImageURI(uri);
-        listView.addHeaderView(banner);
+        listView.addHeaderView(banner, null, false);
 
         List<User> users = UserManager.getUsers();
         ItemListAdapter adapter = new ItemListAdapter(this, users);
