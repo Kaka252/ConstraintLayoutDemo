@@ -231,8 +231,9 @@ app:layout_goneMarginEnd | 隐藏控件结束边距
 
     </android.support.constraint.ConstraintLayout>
 ```
+以上代码实现了在ConstraintLayout中，三个TextView在水平位置的相互约束，显示结果如下：
 
-
+![Chain_SpreadStyle](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_spread.png)
 
 # ConstraintSet简单使用说明
 
