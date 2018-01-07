@@ -184,6 +184,55 @@ app:layout_goneMarginStart | 隐藏控件起始边距
 app:layout_goneMarginEnd | 隐藏控件结束边距
 
 # 复杂布局的灵药：Chain属性
+当水平或者垂直的控件，互相进行彼此之间的约束时，我们称这种形态叫做链(Chain)。举个例子：
+
+```
+<android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_chain_spread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_chain_spread_1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="text 1"
+            android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_2" />
+
+        <TextView
+            android:id="@+id/tv_chain_spread_2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="text 2"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_1"
+            app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_3" />
+
+        <TextView
+            android:id="@+id/tv_chain_spread_3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="text 3"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_2"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+```
+
+
 
 # ConstraintSet简单使用说明
 
