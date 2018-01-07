@@ -235,6 +235,9 @@ app:layout_goneMarginEnd | 隐藏控件结束边距
 
 ![Chain_SpreadStyle](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_spread.png)
 
+不难发现，在第一个控件上，我们使用了layout_constraintHorizontal_chainStyle这个属性，并利用了spread这个属性值将三个控件展开排列。那么接下来，介绍一下关于Chain属性的几种使用形态：
+
+![Chain Style Type](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_style_type.png)
 # ConstraintSet简单使用说明
 
 
