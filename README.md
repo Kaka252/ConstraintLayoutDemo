@@ -289,3 +289,4 @@ packed模式很直观，它将所有Views聚拢在一起，控件和控件之间
 ```
 定义chain链就是对于同一对锚点设置方向相反的约束条件，比如tv_chain_1中设置了app:layout_constraintRight_toLeftOf="@+id/tv_chain_2"，tv_chain_2中也设置了app:layout_constraintLeft_toRightOf="@+id/tv_chain_1"。正如这样，这两个控件之间形成了彼此约束的关系，也即形成链。
 
+# GuideLine

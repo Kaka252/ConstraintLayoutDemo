@@ -46,6 +46,10 @@
             android:name=".constraintset.ConstraintSetActivity"
             android:label="@string/constraint_set_demo"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".guideline.GuideLineActivity"
+            android:label="@string/constraint_guide_line"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

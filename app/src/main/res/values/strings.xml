@@ -6,6 +6,8 @@
     <string name="positioning_demo">位置属性示例</string>
     <string name="constraint_set_demo">ConstraintSet示例</string>
 
+    <string name="constraint_guide_line">GuideLine示例</string>
+
     <string name="button_next">Next</string>
     <string name="button_cancel">Cancel</string>
 </resources>
