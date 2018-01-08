@@ -211,7 +211,14 @@ spread模式会把空间平均分配开来，每个View占有各自的平分空�
 
 ![Spread模式](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_spread.png)
 
-当使用了这个模式的时候，我们还可以配合weight属性设置spread的权重，如图：
+当使用了这个模式的时候，我们还可以配合weight属性设置spread的权重，在设置权重的时候，我们需要将控件的width或者height设置成0dp，并设置layout_constraintHorizontal_weight或者layout_constraintVertical_weight的值：
+
+权重属性 | 描述
+------------ | -------------
+layout_constraintVertical_weight | 垂直方向的控件权重
+layout_constraintHorizontal_weight | 水平方向的控件权重
+
+通过权重的设置，如图：
 
 ![Spread with weight](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_spread_with_weight.png)
 
