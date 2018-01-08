@@ -111,7 +111,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:padding="5dp"
-        android:text="Chain Pack" />
+        android:text="Chain Packed" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cl_chain_pack"
@@ -159,7 +159,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:padding="5dp"
-        android:text="Chain Pack With Bias" />
+        android:text="Chain Packed With Bias" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cl_chain_pack_with_bias"
