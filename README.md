@@ -236,6 +236,56 @@ packed模式很直观，它将所有Views聚拢在一起，控件和控件之间
 
 ![Packed with bias](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_packed_with_bias.png)
 
-通过以上的这几种模式及其组合方式，我们可以在水平位置构建特定的布局场景。
+### 4. XML中设置Chain属性
+设置Chain属性需要保证两个条件：
+
+1. 定义chain链的约束条件
+2. 在Chain的第一个组件上设置chainStyle。
+
+```
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_chain_spread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_chain_spread_1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="text 1"
+            android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_2" />
+
+        <TextView
+            android:id="@+id/tv_chain_spread_2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="text 2"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_1"
+            app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_3" />
+
+        <TextView
+            android:id="@+id/tv_chain_spread_3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="text 3"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_2"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+```
 
 
