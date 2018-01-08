@@ -26,7 +26,7 @@ public class Practice1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_constrainlayout_practice_1);
+        setContentView(R.layout.activity_constraintlayout_practice_1);
         ListView listView = findViewById(R.id.list_view);
 
         View banner = LayoutInflater.from(this).inflate(R.layout.view_banner, null);

@@ -184,61 +184,15 @@ app:layout_goneMarginStart | 隐藏控件起始边距
 app:layout_goneMarginEnd | 隐藏控件结束边距
 
 # 复杂布局的灵药：Chain属性
-当水平或者垂直的控件，互相进行彼此之间的约束时，我们称这种形态叫做链(Chain)。举个例子：
+Chain 链是一种特殊的约束让多个 chain 链连接的 Views 能够平分剩余空间位置。在 Android 传统布局特性里面最相似的应该是 LinearLayout 中的权重比 weight ，但 Chains 链能做到的远远不止权重比 weight 的功能。在项目中，我实现了关于Chain属性的几种形态，如下图所示：
 
-```
-<android.support.constraint.ConstraintLayout
-        android:id="@+id/cl_chain_spread"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+![Chain属性图解]()
 
-        <TextView
-            android:id="@+id/tv_chain_spread_1"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@color/colorAccent"
-            android:gravity="center_vertical|left"
-            android:singleLine="true"
-            android:text="text 1"
-            android:textColor="@android:color/white"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_2" />
-
-        <TextView
-            android:id="@+id/tv_chain_spread_2"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:singleLine="true"
-            android:text="text 2"
-            android:textColor="@android:color/white"
-            app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_1"
-            app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_3" />
-
-        <TextView
-            android:id="@+id/tv_chain_spread_3"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@android:color/black"
-            android:gravity="center"
-            android:singleLine="true"
-            android:text="text 3"
-            android:textColor="@android:color/white"
-            app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_2"
-            app:layout_constraintRight_toRightOf="parent" />
-
-    </android.support.constraint.ConstraintLayout>
-```
-以上代码实现了在ConstraintLayout中，三个TextView在水平位置的相互约束，显示结果如下：
-
-![Chain_SpreadStyle](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_spread.png)
 
 不难发现，在第一个控件上，我们使用了layout_constraintHorizontal_chainStyle这个属性，并利用了spread这个属性值将三个控件展开排列。那么接下来，介绍一下关于Chain属性的几种使用形态：
 
-![Chain Style Type](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_style_type.png)
-# ConstraintSet简单使用说明
+
+
 
 
 
