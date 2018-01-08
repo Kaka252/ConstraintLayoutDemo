@@ -211,6 +211,10 @@ spread模式会把空间平均分配开来，每个View占有各自的平分空�
 
 ![Spread模式](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_spread.png)
 
+当使用了这个模式的时候，我们还可以配合weight属性设置spread的权重，如图：
+
+![Spread with weight](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_spread_with_weight.png)
+
 ### 2. Spread Inside链模式
 spread inside模式是在Spread的基础上，把两边最边缘的两个View到外向父组件边缘的距离去除，然后让剩余的Views在剩余的空间内部平分空间。
 
@@ -225,6 +229,6 @@ packed模式很直观，它将所有Views聚拢在一起，控件和控件之间
 
 ![Packed with bias](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_packed_with_bias.png)
 
-通过以上的这几种模式方式，我们可以在水平位置构建特定的布局场景。
+通过以上的这几种模式及其组合方式，我们可以在水平位置构建特定的布局场景。
 
 
