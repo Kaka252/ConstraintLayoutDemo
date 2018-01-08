@@ -209,16 +209,16 @@ packed | 包裹
 ### 1. Spread链模式
 spread模式会把空间平均分配开来，每个View占有各自的平分空间。它是Chain属性的默认模式。
 
-
+![Chain属性图解](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_spread.png)
 
 ### 2. Spread Inside链模式
 spread inside模式是在Spread的基础上，把两边最边缘的两个View到外向父组件边缘的距离去除，然后让剩余的Views在剩余的空间内部平分空间。
 
-
+![Chain属性图解](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_spread_inside.png)
 
 ### 3. Pack链模式
 packed模式很直观，它将所有Views聚拢在一起，控件和控件之间不留间隙，并将聚拢之后的Views居中显示。
 
-
+![Chain属性图解](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_packed.png)
 
 
