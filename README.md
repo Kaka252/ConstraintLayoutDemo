@@ -289,8 +289,19 @@ packed模式很直观，它将所有Views聚拢在一起，控件和控件之间
 ```
 定义chain链就是对于同一对锚点设置方向相反的约束条件，比如tv_chain_1中设置了app:layout_constraintRight_toLeftOf="@+id/tv_chain_2"，tv_chain_2中也设置了app:layout_constraintLeft_toRightOf="@+id/tv_chain_1"。正如这样，这两个控件之间形成了彼此约束的关系，也即形成链。
 
-# GuideLine
-参照线 guideline 提供了视觉上的参照用于 Views 的对齐，而且不会在运行的时候显示。我们可以在水平方向或者垂直方向进行guideline的创建。
+# GuideLine的使用
+参照线 guideline 提供了视觉上的参照用于 Views 的对齐，而且不会在运行的时候显示。
+
+### Guideline是什么
+通过GuideLine的内部实现，我们发现GuideLine的实现方式很简单：
+1. Guideline就是一个View
+2. 它不会渲染任何东西，因为draw()方法中无具体实现，并且在onMeasure()方法中固定了它自己的宽高都为0。
+3. 在初始的情况下，它的可见性被固定成了View.GONE。
+
+但是由于它在layout布局过程中会占据一个位置，因此其他组件可以以它为参照物进行对齐。
+
+### Guideline的使用
+我们可以在水平方向或者垂直方向进行guideline的创建。
 
 方向 | 描述
 ------------ | -------------
@@ -303,3 +314,70 @@ android:orientation | 方向
 app:layout_constraintGuide_begin | 以View的起始位置为参照物，水平或垂直方向上边界(dp)
 app:layout_constraintGuide_end | 以View的结束位置为参照物，水平或垂直方向上边界(dp)
 app:layout_constraintGuide_percent | 水平或垂直方向上的百分比(float ratio 0.0f - 1.0f)
+
+```
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_avatar"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        fresco:fadeDuration="250" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:singleLine="true"
+        android:textColor="@color/color_484848"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line"
+        app:layout_constraintLeft_toRightOf="@id/iv_avatar"
+        app:layout_constraintRight_toLeftOf="@+id/iv_arrow"
+        tools:text="sdfsdfsfsdfsdf" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:textColor="@color/color_484848"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_title"
+        app:layout_constraintRight_toLeftOf="@+id/iv_arrow"
+        app:layout_constraintTop_toBottomOf="@+id/guide_line"
+        tools:text="sdfsdfsfsdfsdf" />
+
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_arrow_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+```
+
+在上面的例子中，我实现了列表中的一个item，我希望所有的控件在垂直方向上保持居中显示。
+
+![guideline示例](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/guide_line_practise_sample.png)
