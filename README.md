@@ -249,7 +249,7 @@ packed模式很直观，它将所有Views聚拢在一起，控件和控件之间
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tv_chain_spread_1"
+            android:id="@+id/tv_chain_1"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@color/colorAccent"
@@ -259,10 +259,10 @@ packed模式很直观，它将所有Views聚拢在一起，控件和控件之间
             android:textColor="@android:color/white"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_2" />
+            app:layout_constraintRight_toLeftOf="@+id/tv_chain_2" />
 
         <TextView
-            android:id="@+id/tv_chain_spread_2"
+            android:id="@+id/tv_chain_2"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@color/colorPrimary"
@@ -270,11 +270,11 @@ packed模式很直观，它将所有Views聚拢在一起，控件和控件之间
             android:singleLine="true"
             android:text="text 2"
             android:textColor="@android:color/white"
-            app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_1"
-            app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_3" />
+            app:layout_constraintLeft_toRightOf="@+id/tv_chain_1"
+            app:layout_constraintRight_toLeftOf="@+id/tv_chain_3" />
 
         <TextView
-            android:id="@+id/tv_chain_spread_3"
+            android:id="@+id/tv_chain_3"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@android:color/black"
@@ -282,10 +282,10 @@ packed模式很直观，它将所有Views聚拢在一起，控件和控件之间
             android:singleLine="true"
             android:text="text 3"
             android:textColor="@android:color/white"
-            app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_2"
+            app:layout_constraintLeft_toRightOf="@+id/tv_chain_2"
             app:layout_constraintRight_toRightOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 ```
-
+定义chain链就是对于同一对锚点设置方向相反的约束条件，比如tv_chain_1中设置了app:layout_constraintRight_toLeftOf="@+id/tv_chain_2"，tv_chain_2中也设置了app:layout_constraintLeft_toRightOf="@+id/tv_chain_1"。正如这样，这两个控件之间即形成链条。
 
