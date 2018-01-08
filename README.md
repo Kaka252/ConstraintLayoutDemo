@@ -382,6 +382,6 @@ app:layout_constraintGuide_percent | 水平或垂直方向上的百分比(float 
 
 ![guideline示例](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/guide_line_practise_sample.png)
 
-#总结
+# 总结
 
 使用ConstraintLayout构建页面，可以大大的减少页面布局的层级，让页面更加扁平化，也让页面的渲染速度加快。缺点是在建立控件和控件之间的约束时，代码略显啰嗦。
