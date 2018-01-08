@@ -189,9 +189,6 @@ Chain 链是一种特殊的约束让多个 chain 链连接的 Views 能够平分
 ![Chain属性图解]()
 
 
-不难发现，在第一个控件上，我们使用了layout_constraintHorizontal_chainStyle这个属性，并利用了spread这个属性值将三个控件展开排列。那么接下来，介绍一下关于Chain属性的几种使用形态：
-
-
 
 
 
