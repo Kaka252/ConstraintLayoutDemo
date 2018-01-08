@@ -9,10 +9,20 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     public String name;
+    public String desc;
     public String avatar;
+
+    public User() {
+    }
 
     public User(String name, String avatar) {
         this.name = name;
+        this.avatar = avatar;
+    }
+
+    public User(String name, String desc, String avatar) {
+        this.name = name;
+        this.desc = desc;
         this.avatar = avatar;
     }
 }

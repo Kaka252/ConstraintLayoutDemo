@@ -8,6 +8,7 @@ import android.view.View;
 import com.zhouyou.cllayout.bias.BiasActivity;
 import com.zhouyou.cllayout.chain.ChainActivity;
 import com.zhouyou.cllayout.constraintset.ConstraintSetActivity;
+import com.zhouyou.cllayout.guideline.GuideLineActivity;
 import com.zhouyou.cllayout.positioning.PositioningRelativeActivity;
 import com.zhouyou.cllayout.positioning.PositioningViewActivity;
 import com.zhouyou.cllayout.practice.Practice1Activity;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_bias).setOnClickListener(this);
         findViewById(R.id.btn_chain).setOnClickListener(this);
         findViewById(R.id.btn_practise_1).setOnClickListener(this);
+        findViewById(R.id.btn_guide_line).setOnClickListener(this);
         findViewById(R.id.btn_constraint_set).setOnClickListener(this);
     }
 
@@ -48,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_practise_1:
                 intent = new Intent(this, Practice1Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_guide_line:
+                intent = new Intent(this, GuideLineActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_constraint_set:
