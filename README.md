@@ -184,13 +184,40 @@ app:layout_goneMarginStart | 隐藏控件起始边距
 app:layout_goneMarginEnd | 隐藏控件结束边距
 
 # 复杂布局的灵药：Chain属性
-Chain 链是一种特殊的约束让多个 chain 链连接的 Views 能够平分剩余空间位置。在 Android 传统布局特性里面最相似的应该是 LinearLayout 中的权重比 weight ，但 Chains 链能做到的远远不止权重比 weight 的功能。在项目中，我实现了关于Chain属性的几种形态，如下图所示：
+Chain 链是一种特殊的约束让多个 chain 链连接的 Views 能够平分剩余空间位置。在 Android 传统布局特性里面最相似的应该是 LinearLayout 中的权重比 weight ，但 Chains 链能做到的远远不止权重比 weight 的功能。如果要实现一个控件之间的链结构，我们可以将这些控件之间建立起互相的约束关系，并在这些关系的基础上选择创建水平方向的链还是垂直方向的链。
+
+在本例的工程中，我实现了控件在水平方向上的链结构，并实现了关于Chain属性的几种形态，如下图所示：
 
 ![Chain属性图解](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_types.png)
 
+### 0. 属性参数和值
+对于Chain属性的种类来说，一共两种：水平方向(Horizontal)和垂直方向(Vertical)。
+
+属性 | 描述
+------------ | -------------
+app:layout_constraintHorizontal_chainStyle | 水平方向上的Chain
+app:layout_constraintVertical_chainStyle | 垂直方向上的Chain
+
+对于Chain属性的模式来说，一共三种：展开(spread)，内部展开(spread_inside)和包裹(packed)。
+
+Chain模式 | 描述
+------------ | -------------
+spread | 展开
+spread_inside | 内部展开
+packed | 包裹
+
+### 1. Spread链模式
+spread模式会把空间平均分配开来，每个View占有各自的平分空间。它是Chain属性的默认模式。
 
 
 
+### 2. Spread Inside链模式
+spread inside模式是在Spread的基础上，把两边最边缘的两个View到外向父组件边缘的距离去除，然后让剩余的Views在剩余的空间内部平分空间。
+
+
+
+### 3. Pack链模式
+packed模式很直观，它将所有Views聚拢在一起，控件和控件之间不留间隙，并将聚拢之后的Views居中显示。
 
 
 
