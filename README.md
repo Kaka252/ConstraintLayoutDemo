@@ -186,7 +186,9 @@ app:layout_goneMarginEnd | 隐藏控件结束边距
 # 复杂布局的灵药：Chain属性
 Chain 链是一种特殊的约束让多个 chain 链连接的 Views 能够平分剩余空间位置。在 Android 传统布局特性里面最相似的应该是 LinearLayout 中的权重比 weight ，但 Chains 链能做到的远远不止权重比 weight 的功能。在项目中，我实现了关于Chain属性的几种形态，如下图所示：
 
-![Chain属性图解]()
+![Chain属性图解](https://github.com/Kaka252/ConstraintLayoutDemo/blob/master/screenshots/chain_types.png)
+
+
 
 
 
